@@ -1,0 +1,6 @@
+@AWSomeShop.API_HostAddress = http://localhost:5167
+
+GET {{AWSomeShop.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AWSomeShop.API/AWSomeShop.API.csproj" />
+  <Project Path="AWSomeShop.Application/AWSomeShop.Application.csproj" />
+  <Project Path="AWSomeShop.Domain/AWSomeShop.Domain.csproj" />
+  <Project Path="AWSomeShop.Infrastructure/AWSomeShop.Infrastructure.csproj" />
+</Solution>

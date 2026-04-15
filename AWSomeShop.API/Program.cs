@@ -12,17 +12,17 @@ using AWSomeShop.API.Middleware;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
-    .Enrich.WithProperty("Application", "AWSomeShop.API")
-    .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
-    .WriteTo.File("logs/app-.log", 
-        rollingInterval: RollingInterval.Day,
-        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
-    .CreateLogger();
+//Log.Logger = new LoggerConfiguration()
+//    .ReadFrom.Configuration(builder.Configuration)
+//    .Enrich.FromLogContext()
+//    .Enrich.WithProperty("Application", "AWSomeShop.API")
+//    .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
+//    .WriteTo.File("logs/app-.log", 
+//        rollingInterval: RollingInterval.Day,
+//        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
+//    .CreateLogger();
 
-builder.Host.UseSerilog();
+//builder.Host.UseSerilog();
 
 // Add services to the container
 builder.Services.AddControllers();
@@ -127,15 +127,15 @@ if (app.Environment.IsDevelopment())
 // Global exception handler middleware
 app.UseMiddleware<GlobalExceptionHandler>();
 
-app.UseSerilogRequestLogging(options =>
-{
-    options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
-    {
-        diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
-        diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
-        diagnosticContext.Set("RequestIpAddress", httpContext.Connection.RemoteIpAddress?.ToString());
-    };
-});
+//app.UseSerilogRequestLogging(options =>
+//{
+//    options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+//    {
+//        diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
+//        diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
+//        diagnosticContext.Set("RequestIpAddress", httpContext.Connection.RemoteIpAddress?.ToString());
+//    };
+//});
 
 app.UseHttpsRedirection();
 

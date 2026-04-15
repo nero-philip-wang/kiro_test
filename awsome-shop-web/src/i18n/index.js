@@ -10,6 +10,7 @@ const messages = {
       save: '保存',
       delete: '删除',
       edit: '编辑',
+      add: '添加',
       search: '搜索',
       back: '返回',
       home: '首页',
@@ -24,7 +25,11 @@ const messages = {
       orders: '我的订单',
       profile: '个人中心',
       checkout: '结算',
-      orderSuccess: '订单提交成功'
+      orderSuccess: '订单提交成功',
+      name: '姓名',
+      email: '邮箱',
+      role: '角色',
+      status: '状态'
     },
     admin: {
       title: '管理后台',
@@ -59,7 +64,11 @@ const messages = {
       orders: 'My Orders',
       profile: 'Profile',
       checkout: 'Checkout',
-      orderSuccess: 'Order submitted successfully'
+      orderSuccess: 'Order submitted successfully',
+      name: 'Name',
+      email: 'Email',
+      role: 'Role',
+      status: 'Status'
     },
     admin: {
       title: 'Admin Dashboard',

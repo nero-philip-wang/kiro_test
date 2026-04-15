@@ -39,6 +39,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Register Application Services
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<ILoginAttemptService, LoginAttemptService>();
+builder.Services.AddScoped<AWSomeShop.Application.Interfaces.IUserService, AWSomeShop.Infrastructure.Services.UserService>();
 
 // Configure JWT Authentication
 builder.Services.AddAuthentication(options =>
